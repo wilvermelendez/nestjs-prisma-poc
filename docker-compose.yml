@@ -1,0 +1,17 @@
+# Use postgres/example user/password credentials
+version: '3.8'
+
+services:
+  dev-db:
+    image: postgres:14
+    ports:
+      - 5434:5432
+    restart: always
+    environment:
+      POSTGRES_USER: admin
+      POSTGRES_PASSWORD: P@ssword231
+      POSTGRES_DB: user-management
+    networks:
+      - iris-project
+networks:
+  iris-project:
